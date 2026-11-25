@@ -5,99 +5,288 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil Académico - Mirian Milagros Yana Apana</title>
     <style>
+        :root {
+            --fondo-oscuro: #1d141b;
+            --fondo-frio: #261924;
+            --tarjeta: #2e1e2b;
+            --tarjeta-suave: #372434;
+            --acento-frio: #d89bb0;
+            --rosa-polvo: #eab8c9;
+            --perla: #f7eef2;
+            --texto: #f4eaef;
+            --texto-secundario: #c7aeb9;
+            --borde: rgba(234, 184, 201, 0.22);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fdf6f8;
-            color: #3a262e;
+            background: radial-gradient(circle at top, #321f2f 0%, var(--fondo-oscuro) 60%, #150e14 100%);
+            color: var(--texto);
             margin: 0;
             line-height: 1.65;
+            min-height: 100vh;
         }
+
         header {
-            background: linear-gradient(135deg, #9d4edd, #c96480);
-            background: #b56576;
-            color: #ffffff;
-            padding: 2.8rem 1.2rem;
+            background: linear-gradient(135deg, #2b1a29 0%, #3d2338 55%, #4d2a43 100%);
+            color: var(--perla);
+            padding: 3.1rem 1.2rem 2.7rem;
             text-align: center;
+            border-bottom: 1px solid var(--borde);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
         }
+
+        .avatar {
+            width: 84px;
+            height: 84px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            background: linear-gradient(145deg, #4a2b43, #2d1b2a);
+            color: var(--rosa-polvo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.85rem;
+            font-weight: 700;
+            border: 2px solid var(--acento-frio);
+            box-shadow: 0 4px 16px rgba(216, 155, 176, 0.2);
+        }
+
         header h1 {
             margin: 0;
-            font-size: 2.1rem;
-            letter-spacing: 0.4px;
+            font-size: 2.15rem;
+            letter-spacing: 0.5px;
+            color: var(--perla);
         }
-        header p {
-            margin: 0.5rem 0 1.3rem;
-            font-size: 1.02rem;
+
+        header .subtitulo {
+            margin: 0.55rem auto 1.45rem;
+            max-width: 660px;
+            font-size: 1.03rem;
+            color: var(--rosa-polvo);
         }
+
+        .acciones-header {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
         .btn {
             display: inline-block;
-            background: #fff8fa;
-            color: #8d4254;
-            padding: 0.6rem 1.2rem;
+            background: var(--rosa-polvo);
+            color: #231420;
+            padding: 0.65rem 1.25rem;
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
-            border: 1px solid #f3d5de;
+            transition: background-color 0.2s ease, transform 0.15s ease;
         }
+
         .btn:hover {
-            background: #f9e4ea;
+            background: var(--perla);
+            transform: translateY(-1px);
         }
+
+        .btn-secundario {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--perla);
+            border: 1px solid var(--borde);
+        }
+
+        .btn-secundario:hover {
+            background: rgba(234, 184, 201, 0.14);
+            color: var(--rosa-polvo);
+        }
+
         main {
-            max-width: 850px;
-            margin: 2rem auto;
+            max-width: 900px;
+            margin: 2.1rem auto;
             padding: 0 1rem;
         }
+
         section {
-            background: #ffffff;
-            padding: 1.6rem;
-            border-radius: 12px;
+            background: var(--tarjeta);
+            padding: 1.75rem;
+            border-radius: 14px;
             margin-bottom: 1.5rem;
-            border: 1px solid #f4dce3;
-            box-shadow: 0 4px 14px rgba(181, 101, 118, 0.08);
+            border: 1px solid var(--borde);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
         }
+
         h2 {
             margin-top: 0;
-            color: #964659;
-            border-bottom: 2px solid #f6dfe6;
+            color: var(--rosa-polvo);
+            border-bottom: 1px solid var(--borde);
             padding-bottom: 0.45rem;
+            font-size: 1.35rem;
         }
+
+        .grid-datos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 0.85rem;
+            margin-top: 1rem;
+        }
+
+        .dato-box {
+            background: var(--tarjeta-suave);
+            border: 1px solid var(--borde);
+            border-radius: 10px;
+            padding: 0.85rem 1rem;
+        }
+
+        .dato-box strong {
+            display: block;
+            color: var(--acento-frio);
+            font-size: 0.86rem;
+            margin-bottom: 0.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .grid-fortalezas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 0.9rem;
+            margin-top: 1rem;
+        }
+
+        .fortaleza-card {
+            background: var(--tarjeta-suave);
+            border: 1px solid var(--borde);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .fortaleza-card h3 {
+            margin: 0 0 0.35rem;
+            font-size: 1.02rem;
+            color: var(--perla);
+        }
+
+        .fortaleza-card p {
+            margin: 0;
+            font-size: 0.94rem;
+            color: var(--texto-secundario);
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: 0.85rem;
+        }
+
+        .tag {
+            background: var(--tarjeta-suave);
+            color: var(--rosa-polvo);
+            padding: 0.4rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border: 1px solid var(--borde);
+        }
+
+        ul {
+            padding-left: 1.2rem;
+            margin: 0.5rem 0 0;
+        }
+
         li {
-            margin-bottom: 0.55rem;
+            margin-bottom: 0.6rem;
+            color: var(--texto);
         }
+
         a {
-            color: #a64d63;
+            color: var(--rosa-polvo);
             text-decoration: none;
+            font-weight: 500;
         }
+
         a:hover {
+            color: var(--perla);
             text-decoration: underline;
         }
+
         footer {
             text-align: center;
-            color: #8c6a73;
-            padding: 1.5rem;
-            font-size: 0.9rem;
+            color: var(--texto-secundario);
+            padding: 1.75rem 1rem 2.3rem;
+            font-size: 0.92rem;
         }
     </style>
 </head>
 <body>
 
     <header>
+        <div class="avatar">MY</div>
         <h1>Mirian Milagros Yana Apana</h1>
-        <p>Estudiante de Contabilidad — Universidad Católica San Pablo (Arequipa, Perú)</p>
-        <a class="btn" href="https://www.linkedin.com/in/mirian-milagros-yana-apana-1b427a434/" target="_blank">Mi perfil de LinkedIn</a>
+        <p class="subtitulo">19 años · Estudiante de Contabilidad — Universidad Católica San Pablo</p>
+        <div class="acciones-header">
+            <a class="btn" href="[PON_AQUI_TU_LINK_DE_LINKEDIN]" target="_blank">Mi perfil de LinkedIn</a>
+            <a class="btn btn-secundario" href="https://github.com/mirianyanaapana" target="_blank">GitHub</a>
+        </div>
     </header>
 
     <main>
         <section>
-            <h2>Sobre Mí (CV)</h2>
+            <h2>Sobre Mí</h2>
             <p>
-                Soy estudiante de Contabilidad en la Universidad Católica San Pablo. Me caracterizo por mi responsabilidad, organización y compromiso con el aprendizaje continuo y el trabajo en equipo.
+                Tengo 19 años y soy estudiante de Contabilidad en la Universidad Católica San Pablo. Me considero una persona perseverante, empática y con facilidad para comunicarme, comprometida con crecer en el ámbito académico y profesional con orden y calidez humana.
             </p>
-            <ul>
-                <li><strong>Universidad:</strong> Universidad Católica San Pablo</li>
-                <li><strong>Correo:</strong> mirianyana@ucsp.edu.pe</li>
-                <li><strong>GitHub:</strong> <a href="https://github.com/mirianyanaapana" target="_blank">github.com/mirianyanaapana</a></li>
-                <li><strong>Repositorio:</strong> <a href="https://github.com/mirianyanaapana/perfil-academico" target="_blank">github.com/mirianyanaapana/perfil-academico</a></li>
-            </ul>
+            <div class="grid-datos">
+                <div class="dato-box">
+                    <strong>Edad</strong>
+                    19 años
+                </div>
+                <div class="dato-box">
+                    <strong>Universidad</strong>
+                    Universidad Católica San Pablo
+                </div>
+                <div class="dato-box">
+                    <strong>Correo Institucional</strong>
+                    mirianyana@ucsp.edu.pe
+                </div>
+                <div class="dato-box">
+                    <strong>GitHub</strong>
+                    <a href="https://github.com/mirianyanaapana" target="_blank">github.com/mirianyanaapana</a>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Fortalezas e Intereses</h2>
+            <div class="grid-fortalezas">
+                <div class="fortaleza-card">
+                    <h3>Empatía</h3>
+                    <p>Capacidad de escuchar, comprender a los demás y construir relaciones de respeto y confianza en equipo.</p>
+                </div>
+                <div class="fortaleza-card">
+                    <h3>Buena Comunicación</h3>
+                    <p>Facilidad para expresar ideas con claridad, dialogar y mantener una comunicación cercana y constructiva.</p>
+                </div>
+                <div class="fortaleza-card">
+                    <h3>Perseverancia</h3>
+                    <p>Constancia y determinación para cumplir metas académicas y superar retos paso a paso.</p>
+                </div>
+                <div class="fortaleza-card">
+                    <h3>Amor por los Perritos</h3>
+                    <p>Gran cariño y sensibilidad hacia los animales, reflejando paciencia, cuidado y responsabilidad.</p>
+                </div>
+            </div>
+            <div class="tags">
+                <span class="tag">Contabilidad</span>
+                <span class="tag">Trabajo en Equipo</span>
+                <span class="tag">Comunicación Asertiva</span>
+                <span class="tag">Constancia y Compromiso</span>
+                <span class="tag">Respeto y Empatía</span>
+            </div>
         </section>
 
         <section>
@@ -105,9 +294,9 @@
             <ul>
                 <li><strong>Matemática Básica y Álgebra:</strong> Luis Ernesto Guevara Peña — <a href="https://www.linkedin.com/in/luis-ernesto-guevara-pe%C3%B1a-376a86349/" target="_blank">LinkedIn</a></li>
                 <li><strong>Contabilidad de Costos 1:</strong> Lourdes Paz — <a href="https://www.linkedin.com/in/lourdes-paz-25935335/" target="_blank">LinkedIn</a></li>
-                <li><strong>Contabilidad 1:</strong> Geraldine Farfán — <a href="https://www.linkedin.com/in/geraldine-farfan/" target="_blank">LinkedIn</a></li>
-                <li><strong>Contabilidad 1y2:</strong> Giovanna M. García Jarufe — <a href="https://www.linkedin.com/in/giovanna-m-garc%C3%ADa-jarufe/" target="_blank">LinkedIn</a></li>
-                <li><strong>Director de Escuela:</strong> Raúl Valverde Quiroz — <a href="https://www.linkedin.com/in/raul-valverde-quiroz-5bb589196/" target="_blank">LinkedIn</a></li>
+                <li><strong>Contabilidad 2 y 3:</strong> Geraldine Farfán — <a href="https://www.linkedin.com/in/geraldine-farfan/" target="_blank">LinkedIn</a></li>
+                <li><strong>[Curso de Giovanna M. García Jarufe]:</strong> Giovanna M. García Jarufe — <a href="https://www.linkedin.com/in/giovanna-m-garc%C3%ADa-jarufe/" target="_blank">LinkedIn</a></li>
+                <li><strong>[Curso de Raúl Valverde Quiroz]:</strong> Raúl Valverde Quiroz — <a href="https://www.linkedin.com/in/raul-valverde-quiroz-5bb589196/" target="_blank">LinkedIn</a></li>
                 <li><strong>Introducción a la Computación:</strong> E. Cuadros V. — <a href="https://www.linkedin.com/in/ecuadrosv/" target="_blank">LinkedIn</a></li>
                 <li><strong>Asistente de Introducción a la Computación:</strong> Rosmery Violeta Quispe Zavala — <a href="https://www.linkedin.com/in/rosmery-violeta-quispe-zavala-58374638/" target="_blank">LinkedIn</a></li>
             </ul>
@@ -126,7 +315,7 @@
     </main>
 
     <footer>
-        Publicado con GitHub Pages · mirianyanaapana
+        Publicado con GitHub Pages · Mirian Milagros Yana Apana
     </footer>
 
 </body>
